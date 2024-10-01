@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-k5ut9=__bikqaw7b5^95zxddtuxu-i0^$8kmbqnxaj!cogf=sg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*','url-shortner-delta-sandy.vercel.app']
 
 
 # Application definition
@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'URL_SHORTNER.urls'
@@ -124,7 +125,7 @@ STATIC_URL = '/static/'
 
 # Path where static files will be collected
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Directories for additional static files
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
